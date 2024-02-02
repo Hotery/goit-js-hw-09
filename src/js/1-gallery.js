@@ -89,12 +89,7 @@ function createGallery(images) {
 createGallery(images);
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  captions: true,
-  captionSelector: 'img',
-  captionType: 'attr',
   captionsData: 'alt',
-  captionPosition: 'bottom',
   captionDelay: 250,
 });
-lightbox.on('show.simplelightbox');
 
