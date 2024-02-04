@@ -1,8 +1,6 @@
 const form = document.querySelector('.feedback-form');
 const emailInput = form.querySelector('input[name="email"]');
 const messageInput = form.querySelector('textarea[name="message"]');
-const submitButton = form.querySelector('button[type="submit"]');
-const errorMessage = document.querySelector('.error-message');
 
 form.addEventListener('input', (event) => {
   if (event.target === emailInput || event.target === messageInput) {
@@ -30,13 +28,12 @@ form.addEventListener('submit', (event) => {
   };
 
   if (!feedbackFormState.email || !feedbackFormState.message) {
-    errorMessage.textContent = 'Будь ласка, заповніть обидва поля перед надсиланням форми.';
+    console.log('Будь ласка, заповніть обидва поля перед надсиланням форми.');
     return;
   }
 
   localStorage.removeItem('feedback-form-state');
   emailInput.value = '';
   messageInput.value = '';
-  errorMessage.textContent = '';
   console.log(feedbackFormState);
 });
